@@ -4,41 +4,19 @@ using std::cin;
 using std::cout;
 using std::endl;
 
-enum teachers
+//snake game using OpenGL
+
+class snake
 {
-    Bart,
-    Valerie,
-    Sarah,
-    Joost,
-    Frederik
-}
+    void reset();
+};
 
-enum degrees
+class food
 {
-    Math,
-    Science,
-    Biology,
-    Electronics
-}
+    void reset();
+};
 
-class classroom
-{
-public:
-    char year;
-    teachers teacher;
-    degrees degree;
-
-    classroom(char Year, teachers Teacher, degrees Degree)
-    {
-        year = Year;
-        teacher = Teacher;
-        degree = Degree;
-    }
-    //addstudent
-}
-
-int
-main()
+int main()
 {
 
     return 0;
