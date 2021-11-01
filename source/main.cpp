@@ -9,6 +9,6 @@ int main()
         return EXIT_FAILURE;
     }
 
-    std::cout << "Hello World!" << std::endl;
+    std::cout << "Hello World" << std::endl;
     return EXIT_SUCCESS;
 }
