@@ -3,12 +3,16 @@
 
 int main()
 {
-    if (SDL_Init(SDL_INIT_EVERYTHING) > 0)
-    {
-        std::cout << "SDL_Init failed with error: " << SDL_GetError() << std::endl;
-        return EXIT_FAILURE;
-    }
+    SDL_Init(SDL_INIT_VIDEO);
+    SDL_Window *window = SDL_CreateWindow("title", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 320, 240, SDL_WINDOW_SHOWN);
+    SDL_Renderer *renderer = SDL_CreateRenderer(window, -1, 0);
+    SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
+    SDL_Event event;
+    SDL_PollEvent(&event);
+    SDL_RenderClear(renderer);
+    SDL_RenderPresent(renderer);
 
-    std::cout << "Hello World" << std::endl;
+    SDL_Delay(10000);
+
     return EXIT_SUCCESS;
 }
