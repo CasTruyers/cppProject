@@ -1,3 +1,3 @@
-# cppProject
+## SNAKE
 
 snake game
