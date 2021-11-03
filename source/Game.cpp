@@ -8,6 +8,14 @@ Game::~Game()
 {
 }
 
+void Game::setRectangle(int xpos, int ypos, int w, int h)
+{
+    rectangle.x = xpos;
+    rectangle.y = ypos;
+    rectangle.w = w;
+    rectangle.h = h;
+}
+
 void Game::init(const char *title, int xpos, int ypos, int width, int height, bool fullscreen)
 {
     int flags = 0;
@@ -27,7 +35,6 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
         renderer = SDL_CreateRenderer(window, -1, 0);
         if (renderer)
         {
-            SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
             cout << "Renderer Created" << endl;
         }
 
@@ -51,31 +58,31 @@ void Game::handleEvents()
         break;
 
     case SDL_KEYDOWN:
-        cout << "keyPresssed" << endl;
-
         switch (event.key.keysym.sym)
         {
+
         case SDLK_UP:
-            cout << "UP" << endl;
+            offsety -= snakeSize;
+            //cout << "UP" << " - offsety = " << offsety << endl;
             break;
         case SDLK_DOWN:
-            cout << "DOWN" << endl;
+            offsety += snakeSize;
+            //cout << "DOWN" << " - offsety = " << offsety << endl;
             break;
         case SDLK_LEFT:
-            cout << "LEFT" << endl;
+            offsetx -= snakeSize;
+            //cout << "LEFT" << " - offsetx = " << offsety << endl;
             break;
         case SDLK_RIGHT:
-            cout << "DOWN" << endl;
+            offsetx += snakeSize;
+            //cout << "RIGTH" << " - offsetx = " << offsety << endl;
             break;
-
-        case SDLK_a:
-            cout << "a" << endl;
-            break;
-
         default:
+            cout << "undefined KeyboardEvent" << endl;
             break;
         }
         break;
+
     default:
         break;
     }
@@ -83,14 +90,18 @@ void Game::handleEvents()
 
 void Game::update()
 {
-    cnt++;
-    cout << cnt << endl;
+    this->setRectangle((wWidth / 2) + offsetx, (wHeight / 2) + offsety, snakeSize, snakeSize);
+    cout << /*"set rectangle to: " << totalx << ", " << totaly << */ " struct: " << this->rectangle.x << ", " << this->rectangle.y << endl;
 }
 
 void Game::render()
 {
+    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
     SDL_RenderClear(renderer);
-    //here add stuff to render
+
+    SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
+    SDL_RenderDrawRect(renderer, &this->rectangle);
+
     SDL_RenderPresent(renderer);
 }
 
