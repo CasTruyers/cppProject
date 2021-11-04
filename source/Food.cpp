@@ -34,5 +34,6 @@ void Food::render()
     for (int i = 1; i = < length; i++) 
     {
         SDL_RenderDrawRects(renderer, &this->rectangle[i]);
+        cout<<"Hello"<< endl;
     }
 }
