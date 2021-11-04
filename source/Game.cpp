@@ -36,6 +36,7 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
     }
     else
         isRunning = false;
+    SDL_RenderSetLogicalSize(renderer, RESOLUTION_X / CELL_SIZE, RESOLUTION_Y / CELL_SIZE);
 }
 
 void Game::handleEvents()

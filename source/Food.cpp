@@ -3,8 +3,8 @@
 
 Food::Food()
 {
-    this->position.h = CELL_SIZE;
-    this->position.w = CELL_SIZE;
+    this->position.h = 1;
+    this->position.w = 1;
 }
 
 Food::~Food()
@@ -17,8 +17,8 @@ void Food::reset(Snake *snake)
     bool found = false;
     while (!found)
     {
-        this->position.x = rand() % RESOLUTION_X;
-        this->position.y = rand() % RESOLUTION_Y;
+        this->position.x = rand() % RESOLUTION_X / CELL_SIZE;
+        this->position.y = rand() % RESOLUTION_Y / CELL_SIZE;
         cout << "foodPos: " << this->position.x << ", " << this->position.y << endl;
         found = true;
         for (int i = 0; i < snake->length; i++)

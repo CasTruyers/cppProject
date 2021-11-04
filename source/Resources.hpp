@@ -4,7 +4,7 @@
 #include "SDL2/SDL.h"
 #include <time.h>
 
-#define CELL_SIZE 10
+#define CELL_SIZE 5
 #define RESOLUTION_Y 240
 #define RESOLUTION_X 320
 

@@ -18,10 +18,10 @@ void Snake::reset()
 
     for (int i = 0; i < length; i++)
     {
-        position[i].x = i * CELL_SIZE;
-        position[i].y = RESOLUTION_Y / 2;
-        position[i].h = CELL_SIZE;
-        position[i].w = CELL_SIZE;
+        position[i].x = 10 - i;
+        position[i].y = 10;
+        position[i].h = 1;
+        position[i].w = 1;
     }
 }
 
@@ -92,12 +92,12 @@ bool Snake::selfCollision()
         cout << "test: 3" << endl;
         return true;
     }
-    if (position[0].x >= RESOLUTION_X)
+    if (position[0].x >= RESOLUTION_X / CELL_SIZE)
     {
         cout << "test: 4" << endl;
         return true;
     }
-    if (position[0].y >= RESOLUTION_Y)
+    if (position[0].y >= RESOLUTION_Y / CELL_SIZE)
     {
         cout << "test: 5" << endl;
         return true;
