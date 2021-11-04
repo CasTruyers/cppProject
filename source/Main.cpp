@@ -1,4 +1,5 @@
 #include "Game.hpp"
+#include "Resources.hpp"
 
 Game *game = nullptr;
 
@@ -12,9 +13,7 @@ int main()
 
     game = new Game();
 
-    game->init("snake", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, wWidth, wHeight, false);
-
-    game->setRectangle(wWidth / 2, wHeight / 2, snakeSize, snakeSize);
+    game->init("snake", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, RESOLUTION_X, RESOLUTION_Y, false);
 
     while (game->running())
     {

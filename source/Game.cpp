@@ -1,7 +1,14 @@
 #include "Game.hpp"
+#include "resources.hpp"
 
 Game::Game()
 {
+    snake = new Snake();
+    food = new Food();
+    food->reset(snake);
+
+    score = 5;
+    highScore = score;
 }
 
 Game::~Game()
@@ -20,30 +27,24 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
 {
     int flags = 0;
     if (fullscreen)
-    {
         flags = SDL_WINDOW_FULLSCREEN;
-    }
+
     if (SDL_Init(SDL_INIT_EVERYTHING) == 0)
     {
         cout << "Subsystems initialised!..." << endl;
+
         window = SDL_CreateWindow(title, xpos, ypos, width, height, flags);
         if (window)
-        {
             cout << "Window Created" << endl;
-        }
 
         renderer = SDL_CreateRenderer(window, -1, 0);
         if (renderer)
-        {
             cout << "Renderer Created" << endl;
-        }
 
         isRunning = true;
     }
     else
-    {
         isRunning = false;
-    }
 }
 
 void Game::handleEvents()
@@ -62,20 +63,24 @@ void Game::handleEvents()
         {
 
         case SDLK_UP:
-            offsety -= snakeSize;
-            //cout << "UP" << " - offsety = " << offsety << endl;
+            snake->goUp();
+            cout << "UP" << endl;
             break;
         case SDLK_DOWN:
-            offsety += snakeSize;
-            //cout << "DOWN" << " - offsety = " << offsety << endl;
+            snake->goDown();
+            cout << "DOWN" << endl;
             break;
         case SDLK_LEFT:
-            offsetx -= snakeSize;
-            //cout << "LEFT" << " - offsetx = " << offsety << endl;
+            snake->goLeft();
+            cout << "LEFT" << endl;
             break;
         case SDLK_RIGHT:
-            offsetx += snakeSize;
-            //cout << "RIGTH" << " - offsetx = " << offsety << endl;
+            snake->goRight();
+            cout << "RIGTH" << endl;
+            break;
+        case SDLK_KP_ENTER:
+            this->reset();
+            cout << "RESET" << endl;
             break;
         default:
             cout << "undefined KeyboardEvent" << endl;
@@ -90,7 +95,25 @@ void Game::handleEvents()
 
 void Game::update()
 {
-    this->setRectangle((wWidth / 2) + offsetx, (wHeight / 2) + offsety, snakeSize, snakeSize);
+    snake->advance();
+
+    if (snake->foodCollision(food->position.x, food->position.y))
+    {
+        food->reset(snake);
+        snake->grow();
+        score++;
+        if (score > highScore)
+        {
+            highScore = score;
+        }
+    }
+
+    if (snake->selfCollision())
+    {
+        isRunning = false;
+    }
+
+    this->setRectangle((wWidth / 2) + offsetx, (wHeight / 2) + offsety, CELL_SIZE, CELL_SIZE);
     cout << /*"set rectangle to: " << totalx << ", " << totaly << */ " struct: " << this->rectangle.x << ", " << this->rectangle.y << endl;
 }
 
@@ -98,11 +121,15 @@ void Game::render()
 {
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
     SDL_RenderClear(renderer);
-
-    SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
-    SDL_RenderDrawRect(renderer, &this->rectangle);
-
+    snake->render();
+    food->render();
     SDL_RenderPresent(renderer);
+}
+
+void Game::reset()
+{
+    snake->reset(snake);
+    food->reset(snake);
 }
 
 void Game::clean()
