@@ -1,7 +1,5 @@
 #pragma once
-#include "resources.hpp"
-
-#define CELL_SIZE 5
+#include "Resources.hpp"
 
 class Snake
 {
@@ -15,12 +13,15 @@ public:
     void goLeft();
     void goRight();
     bool selfCollision();
-    bool foodCollision();
+    bool foodCollision(int x, int y);
     void grow();
+    void render(SDL_Renderer *renderer);
 
     void reset();
 
-private:
+    SDL_Rect position[30];
     int length;
+
+private:
     struct xy direction;
 };

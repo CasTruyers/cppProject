@@ -1,39 +1,37 @@
-#include "resources.hpp"
 #include "Food.hpp"
+#include "Game.hpp"
 
 Food::Food()
 {
+    this->position.h = CELL_SIZE;
+    this->position.w = CELL_SIZE;
 }
 
 Food::~Food()
 {
 }
 
-void Food::reset(snake *snake)
+void Food::reset(Snake *snake)
 {
     srand((unsigned int)time(NULL));
     bool found = false;
     while (!found)
     {
-        position.x = rand();
-        position.y = rand();
-
+        this->position.x = rand() % RESOLUTION_X;
+        this->position.y = rand() % RESOLUTION_Y;
+        cout << "foodPos: " << this->position.x << ", " << this->position.y << endl;
         found = true;
         for (int i = 0; i < snake->length; i++)
         {
-            if (snake->position[i].x == position->x && snake->position[].y == position.y)
+            if (snake->position[i].x == this->position.x && snake->position[i].y == this->position.y)
             {
                 found = false;
             }
         }
     }
 }
-void Food::render()
+void Food::render(SDL_Renderer *renderer) //acces game class for renderer?
 {
     SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
-    for (int i = 1; i = < length; i++) 
-    {
-        SDL_RenderDrawRects(renderer, &this->rectangle[i]);
-        cout<<"Hello"<< endl;
-    }
+    SDL_RenderDrawRect(renderer, &this->position);
 }

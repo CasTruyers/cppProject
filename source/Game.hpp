@@ -3,9 +3,6 @@
 #include "Food.hpp"
 #include "Resources.hpp"
 
-#define RESOLUTION_Y 240
-#define RESOLUTION_X 320
-
 class Game
 {
 public:
@@ -23,17 +20,14 @@ public:
 
     void reset();
 
-private:
     Snake *snake;
     Food *food;
-    int score; //snakeLength
-    int highScore;
-    int offsetx = 0;
-    int offsety = 0;
-    bool isRunning;
-    SDL_Window *window = nullptr;
+
     SDL_Renderer *renderer = nullptr;
 
-protected:
-    SDL_Rect rectangle[30];
+private:
+    int score;
+    int highScore;
+    bool isRunning;
+    SDL_Window *window = nullptr;
 };

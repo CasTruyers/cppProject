@@ -1,5 +1,14 @@
+#include "Game.hpp"
 #include "Snake.hpp"
-#include "resources.hpp"
+
+Snake::Snake()
+{
+    reset();
+}
+
+Snake::~Snake()
+{
+}
 
 void Snake::reset()
 {
@@ -9,8 +18,10 @@ void Snake::reset()
 
     for (int i = 0; i < length; i++)
     {
-        position[i].x = 10 - i;
-        position[i].y = 10;
+        position[i].x = i * CELL_SIZE;
+        position[i].y = RESOLUTION_Y / 2;
+        position[i].h = CELL_SIZE;
+        position[i].w = CELL_SIZE;
     }
 }
 
@@ -61,23 +72,36 @@ void Snake::advance()
     position[0].y = position[0].y + direction.y;
 }
 
-void Snake::selfCollision()
+bool Snake::selfCollision()
 {
     for (int i = 1; i < length; i++)
     {
         if (position[0].x == position[i].x && position[0].y == position[i].y)
         {
+            cout << "test: 1" << endl;
             return true;
         }
     }
     if (position[0].x < 0)
+    {
+        cout << "test: 2" << endl;
         return true;
+    }
     if (position[0].y < 0)
+    {
+        cout << "test: 3" << endl;
         return true;
-    if (position[0].x >= RESOLUTION_X / CELL_SIZE)
+    }
+    if (position[0].x >= RESOLUTION_X)
+    {
+        cout << "test: 4" << endl;
         return true;
-    if (position[0].y >= RESOLUTION_Y / CELL_SIZE)
+    }
+    if (position[0].y >= RESOLUTION_Y)
+    {
+        cout << "test: 5" << endl;
         return true;
+    }
 
     return false;
 }
@@ -86,20 +110,26 @@ bool Snake::foodCollision(int x, int y)
 {
     if (position[0].x == x && position[0].y == y)
     {
+        cout << "yum" << endl;
         return true;
     }
     return false;
 }
 
 void Snake::grow()
-{
-    this->rectangle[length].x = this->rectangle[length - 1].x;
-    this->rectangle[length].y = this->rectangle[length - 1].y;
-    length++
+{ //!fix dit
+    this->position[length].x = this->position[length - 1].x;
+    this->position[length].y = this->position[length - 1].y;
+    length++;
 }
 
-void Snake::render()
+void Snake::render(SDL_Renderer *renderer)
 {
     SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
-    for (int i = 1; i = < length; i++) {SDL_RenderDrawRects(renderer, &this->rectangle[i]);}
+    for (int i = 0; i < length; i++)
+    {
+        SDL_RenderDrawRect(renderer, &this->position[i]);
+    }
+    SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
+    SDL_RenderDrawRect(renderer, &this->position[0]);
 }

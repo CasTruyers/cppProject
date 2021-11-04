@@ -1,11 +1,13 @@
 #include "Game.hpp"
+#include "Snake.hpp"
+#include "Food.hpp"
 #include "Resources.hpp"
 
 Game *game = nullptr;
 
 int main()
 {
-    const int FPS = 24;
+    const int FPS = 50;
     const int frameDelay = 1000 / FPS;
 
     int frameStart;
