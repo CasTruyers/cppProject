@@ -29,7 +29,9 @@
 
 ### HOW TO INSTALL
  Clone the repository and make sure you have the SDL2 library.
+ 
  Add include folder with the header files of the SDL2 library.
+ 
  Add lib folder with the binary files of the SDL2 library.
  
 ### HOW TO COMPILE
