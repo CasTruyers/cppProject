@@ -18,8 +18,8 @@
  The application is entirely written in C++.
 
 ### graphics
- We use the SDL2 library to acces the hardware on our computer. (i.e. display, keyboard,...)
- In this case we talk to the graphics card to render graphics and to the keyboard to take user input.
+ SDL2 library is used to acces the hardware on the computer. (i.e. display, keyboard,...)
+ This application talks to the graphics card to render graphics, and the keyboard to take user input.
  **SDL2 works cross-platform!**
 
 ### FEATURES
@@ -43,11 +43,13 @@
  *g++ -std=c++11 -Wall -g  -lsdl2 -Iinclude -Llib source/Food.cpp source/Game.cpp source/Main.cpp source/Snake.cpp -o build/snake*
 
 ### HOW TO USE
- Run the application, a window will pop up and the game begins.
+ Run the application, a window pops up and the game begins.
  Use the UP, DOWN, LEFT and RIGHT keys on the keyboard to control the snake.
+ Quit the game be closing the window or pressing ESC.
 
 ### TO-DO
  - File I/O for saving highscore
+ - Adding ESC Quitting
  - sounds
  - showing score and highscore on window instead of terminal
  - making SDL_Rect struct array dynamic
