@@ -1,4 +1,4 @@
-# SNAKE
+# SNAKE GAME
 
 **a long, thin creature, resembling a snake**
 
