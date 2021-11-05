@@ -19,7 +19,9 @@
 
 ### graphics
  SDL2 library is used to acces the hardware on the computer. (i.e. display, keyboard,...)
+ 
  This application talks to the graphics card to render graphics, and the keyboard to take user input.
+ 
  **SDL2 works cross-platform!**
 
 ### FEATURES
