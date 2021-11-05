@@ -48,7 +48,9 @@
 
 ### HOW TO USE
  Run the application, a window pops up and the game begins.
+ 
  Use the UP, DOWN, LEFT and RIGHT keys on the keyboard to control the snake.
+ 
  Quit the game be closing the window or pressing ESC.
 
 ### TO-DO
