@@ -12,7 +12,7 @@ public:
     void goDown();
     void goLeft();
     void goRight();
-    bool selfCollision();
+    bool badCollision();
     bool foodCollision(int x, int y);
     void grow();
     void render(SDL_Renderer *renderer);

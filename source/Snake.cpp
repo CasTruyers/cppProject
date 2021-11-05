@@ -63,45 +63,36 @@ void Snake::goRight()
 
 void Snake::advance()
 {
+    //body
     for (int i = length - 1; i > 0; i--)
     {
         position[i].x = position[i - 1].x;
         position[i].y = position[i - 1].y;
     }
+    //head
     position[0].x = position[0].x + direction.x;
     position[0].y = position[0].y + direction.y;
 }
 
-bool Snake::selfCollision()
+bool Snake::badCollision()
 {
     for (int i = 1; i < length; i++)
     {
         if (position[0].x == position[i].x && position[0].y == position[i].y)
-        {
-            cout << "test: 1" << endl;
             return true;
-        }
     }
+
     if (position[0].x < 0)
-    {
-        cout << "test: 2" << endl;
         return true;
-    }
+
     if (position[0].y < 0)
-    {
-        cout << "test: 3" << endl;
         return true;
-    }
+
     if (position[0].x >= RESOLUTION_X / CELL_SIZE)
-    {
-        cout << "test: 4" << endl;
         return true;
-    }
+
     if (position[0].y >= RESOLUTION_Y / CELL_SIZE)
-    {
-        cout << "test: 5" << endl;
         return true;
-    }
 
     return false;
 }
@@ -109,15 +100,16 @@ bool Snake::selfCollision()
 bool Snake::foodCollision(int x, int y)
 {
     if (position[0].x == x && position[0].y == y)
-    {
-        cout << "yum" << endl;
         return true;
-    }
     return false;
 }
 
 void Snake::grow()
-{ //!fix dit
+{
+    //[length] en [length - 1] WANT -> array is zero indexed.
+    //[length - 1] is dus eigenlijk de laatste body en [length] de nieuwe
+    this->position[length].h = 1;
+    this->position[length].w = 1;
     this->position[length].x = this->position[length - 1].x;
     this->position[length].y = this->position[length - 1].y;
     length++;
@@ -126,7 +118,7 @@ void Snake::grow()
 void Snake::render(SDL_Renderer *renderer)
 {
     SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
-    for (int i = 0; i < length; i++)
+    for (int i = 1; i < length; i++)
     {
         SDL_RenderDrawRect(renderer, &this->position[i]);
     }

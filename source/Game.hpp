@@ -26,7 +26,6 @@ public:
     SDL_Renderer *renderer = nullptr;
 
 private:
-    int score;
     int highScore;
     bool isRunning;
     SDL_Window *window = nullptr;

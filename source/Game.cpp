@@ -6,8 +6,8 @@ Game::Game()
     food = new Food();
     food->reset(snake);
 
-    score = 5;
-    highScore = score;
+    snake->length = 5;
+    highScore = snake->length;
 }
 
 Game::~Game()
@@ -93,17 +93,16 @@ void Game::update()
     {
         food->reset(snake);
         snake->grow();
-        score++;
-        if (score > highScore)
-        {
-            highScore = score;
-        }
+
+        if (snake->length > highScore)
+            highScore = snake->length;
+
         cout << "food collision" << endl;
     }
 
-    if (snake->selfCollision())
+    if (snake->badCollision())
     {
-        cout << "self collision" << endl;
+        cout << "bad collision" << endl;
         reset();
     }
 }
@@ -121,11 +120,10 @@ void Game::render()
 
 void Game::reset()
 {
+    cout << "score: " << snake->length << endl
+         << "highScore: " << highScore << endl;
     snake->reset();
     food->reset(snake);
-
-    cout << "score: " << score << endl
-         << "highScore: " << highScore << endl;
 }
 
 void Game::clean()

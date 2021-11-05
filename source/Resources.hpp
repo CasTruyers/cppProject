@@ -8,6 +8,9 @@
 #define RESOLUTION_Y 240
 #define RESOLUTION_X 320
 
+const int FPS = 24;
+const int frameDelay = 1000 / FPS;
+
 struct xy
 {
     int x;
