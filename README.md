@@ -68,3 +68,4 @@
  - showing score and highscore on window instead of terminal
  - making SDL_Rect struct array dynamic
  - memory optimization
+ - score/highscore displayed on window
