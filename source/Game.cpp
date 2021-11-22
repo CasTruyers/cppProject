@@ -7,7 +7,7 @@ Game::Game()
     food->reset(snake);
 
     snake->length = 5;
-    highScore = snake->length;
+    highscore = snake->length;
 }
 
 Game::~Game()
@@ -56,23 +56,21 @@ void Game::handleEvents()
 
         case SDLK_UP:
             snake->goUp();
-            cout << "UP" << endl;
             break;
         case SDLK_DOWN:
             snake->goDown();
-            cout << "DOWN" << endl;
             break;
         case SDLK_LEFT:
             snake->goLeft();
-            cout << "LEFT" << endl;
             break;
         case SDLK_RIGHT:
             snake->goRight();
-            cout << "RIGTH" << endl;
             break;
         case SDLK_RETURN:
             this->reset();
-            cout << "RESET" << endl;
+            break;
+        case SDLK_ESCAPE:
+            isRunning = false;
             break;
         default:
             cout << "undefined KeyboardEvent" << endl;
@@ -93,16 +91,10 @@ void Game::update()
     {
         food->reset(snake);
         snake->grow();
-
-        if (snake->length > highScore)
-            highScore = snake->length;
-
-        cout << "food collision" << endl;
     }
 
     if (snake->badCollision())
     {
-        cout << "bad collision" << endl;
         reset();
     }
 }
@@ -120,12 +112,39 @@ void Game::render()
 
 void Game::reset()
 {
+    if (snake->length > highscore)
+        highscore = snake->length;
     cout << "score: " << snake->length << endl
-         << "highScore: " << highScore << endl;
+         << "highScore: " << highscore << endl;
     snake->reset();
     food->reset(snake);
 }
 
+void Game::setHighscore()
+{
+    filePtr.open("highscore.txt", ios::in);
+    if (filePtr.is_open())
+    {
+        cout << "test" << endl;
+        filePtr >> allTimeHighscore;
+        cout << "all-time highscore: " << allTimeHighscore << endl;
+
+        if (allTimeHighscore < highscore || allTimeHighscore == 0)
+        {
+            cout << "breaked highscore!" << endl;
+            cout << "new all-time highscore: " << highscore << endl;
+            filePtr << highscore;
+        }
+        else
+            cout << "did not break highscore :(" << endl;
+    }
+    else
+    {
+        cout << "Error opening file" << endl;
+    }
+
+    filePtr.close();
+}
 void Game::clean()
 {
     SDL_DestroyWindow(window);

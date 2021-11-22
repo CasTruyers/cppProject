@@ -19,8 +19,8 @@ public:
 
     void reset();
 
-    SDL_Rect position[30];
-    int length;
+    SDL_Rect position[255]; //!dynamic maken
+    uint8_t length;
 
 private:
     struct xy direction;

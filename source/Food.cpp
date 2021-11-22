@@ -19,7 +19,7 @@ void Food::reset(Snake *snake)
     {
         this->position.x = rand() % RESOLUTION_X / CELL_SIZE;
         this->position.y = rand() % RESOLUTION_Y / CELL_SIZE;
-        cout << "foodPos: " << this->position.x << ", " << this->position.y << endl;
+        //cout << "foodPos: " << this->position.x << ", " << this->position.y << endl;
         found = true;
         for (int i = 0; i < snake->length; i++)
         {

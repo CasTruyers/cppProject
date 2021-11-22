@@ -61,3 +61,4 @@ Makefile
 # Others
 .DS_Store
 temp.cpp
+*.txt

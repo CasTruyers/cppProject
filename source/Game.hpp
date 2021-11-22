@@ -17,8 +17,10 @@ public:
     void clean();
     bool running() { return isRunning; }
     void setRectangle(int xpos, int ypos, int w, int h);
-
     void reset();
+    void setHighscore();
+
+    fstream filePtr;
 
     Snake *snake;
     Food *food;
@@ -26,7 +28,8 @@ public:
     SDL_Renderer *renderer = nullptr;
 
 private:
-    int highScore;
+    uint16_t allTimeHighscore = 0;
+    uint16_t highscore;
     bool isRunning;
     SDL_Window *window = nullptr;
 };
