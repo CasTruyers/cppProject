@@ -28,8 +28,8 @@ public:
     SDL_Renderer *renderer = nullptr;
 
 private:
-    uint16_t allTimeHighscore = 0;
-    uint16_t highscore;
+    uint8_t allTimeHighscore = 0;
+    uint8_t highscore;
     bool isRunning;
     SDL_Window *window = nullptr;
 };

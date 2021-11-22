@@ -19,7 +19,7 @@ public:
 
     void reset();
 
-    SDL_Rect position[255]; //!dynamic maken
+    SDL_Rect position[255]; //!dynamic maken & SDL_RECT decleration aanpassen
     uint8_t length;
 
 private:
