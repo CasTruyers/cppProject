@@ -6,11 +6,11 @@
 #include "SDL2/SDL.h"
 #include <time.h>
 
-#define CELL_SIZE 5
+#define CELL_SIZE 8
 #define RESOLUTION_Y 240
 #define RESOLUTION_X 320
 
-const int FPS = 24;
+const int FPS = 18;
 const int frameDelay = 1000 / FPS;
 
 struct xy
