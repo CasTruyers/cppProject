@@ -63,7 +63,6 @@
 
 ### TO-DO
  - File I/O for saving highscore
- - Adding ESC Quitting
  - sounds
  - showing score and highscore on window instead of terminal
  - making SDL_Rect struct array dynamic
