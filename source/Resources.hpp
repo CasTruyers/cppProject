@@ -8,16 +8,16 @@
 
 #define CELL_SIZE 8
 #define RESOLUTION_Y 240
-#define RESOLUTION_X 320
+#define RESOLUTION_X 240
 
 const int FPS = 18;
 const int frameDelay = 1000 / FPS;
 
-struct xy
+typedef struct xy
 {
     int8_t x;
     int8_t y;
-};
+} xy;
 
 using namespace std;
 

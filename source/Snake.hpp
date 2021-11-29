@@ -18,7 +18,6 @@ public:
     void render(SDL_Renderer *renderer);
 
     void reset();
-
     SDL_Rect position[255]; //!dynamic maken & SDL_RECT decleration aanpassen
     uint8_t length;
 
