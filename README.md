@@ -12,7 +12,7 @@ or the edges of the playing area. Each time
 the snake eats a piece of food, its tail grows
 longer, making the game increasingly
 difficult. The user controls the direction of
-the snake's had (up, down, left, or right),
+the snake's head (up, down, left, or right),
 and the snake's body follows.
 
 ### language
