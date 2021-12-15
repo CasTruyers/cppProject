@@ -62,9 +62,8 @@ Quit the game be closing the window or pressing ESC.
 
 ### TO-DO
 
-- File I/O for saving highscore
+- Top 3 highscores instead of 1
+- Add names to highscore.
 - sounds
-- showing score and highscore on window instead of terminal
-- making SDL_Rect struct array dynamic
 - memory optimization
 - score/highscore displayed on window
