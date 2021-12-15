@@ -13,6 +13,7 @@ Snake::~Snake()
 void Snake::reset()
 {
     length = 5;
+    //position = (SDL_Rect *)calloc(length, sizeof(SDL_Rect));
     direction.x = 1;
     direction.y = 0;
 
@@ -106,7 +107,11 @@ bool Snake::foodCollision(int x, int y)
 
 void Snake::grow()
 {
-    //[length] en [length - 1] WANT -> array is zero indexed.
+    //position = (SDL_Rect *)realloc(position, ((length + 1) * sizeof(SDL_Rect)));
+    //position = positionTemp;
+    //free(positionTemp);
+
+    //array is zero indexed.
     //[length - 1] is dus eigenlijk de laatste body en [length] de nieuwe
     this->position[length].h = 1;
     this->position[length].w = 1;

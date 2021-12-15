@@ -114,7 +114,7 @@ void Game::reset()
 {
     if (snake->length > highscore)
         highscore = snake->length;
-    cout << "score: " << snake->length << endl
+    cout << "score: " << +snake->length << endl
          << "highScore: " << highscore << endl;
     snake->reset();
     food->reset(snake);
@@ -122,33 +122,47 @@ void Game::reset()
 
 void Game::setHighscore()
 {
-    filePtr.open("highscore.txt", ios::in);
-    if (filePtr.is_open())
+    myFile.open("highscore.txt", ios::in);
+    if (myFile.is_open())
     {
-        cout << "test" << endl;
-        filePtr >> allTimeHighscore;
-        cout << "all-time highscore: " << allTimeHighscore << endl;
+        cout << endl
+             << endl;
+        myFile >> allTimeHighscore;
+        cout << "******************************" << endl
+             << "*                            *" << endl;
+        cout << "*   all-time highscore: " << allTimeHighscore << "   *" << endl
+             << "*                            *" << endl;
+        myFile.close();
 
         if (allTimeHighscore < highscore || allTimeHighscore == 0)
         {
-            cout << "breaked highscore!" << endl;
-            cout << "new all-time highscore: " << highscore << endl;
-            filePtr << highscore;
+            myFile.open("highscore.txt", ios::out);
+            if (myFile.is_open())
+            {
+                cout << "*     breaked highscore!     *" << endl
+                     << "*                            *" << endl;
+                cout << "* new all-time highscore: " << highscore << " *" << endl;
+                myFile << highscore;
+                myFile.close();
+            }
+            else
+                cout << "Error opening file output" << endl;
         }
         else
-            cout << "did not break highscore :(" << endl;
+            cout << "* did not break highscore :( *" << endl;
     }
     else
     {
-        cout << "Error opening file" << endl;
+        cout << "Error opening file input" << endl;
     }
-
-    filePtr.close();
+    cout << "*                            *" << endl
+         << "******************************" << endl;
 }
 void Game::clean()
 {
     SDL_DestroyWindow(window);
     SDL_DestroyRenderer(renderer);
     SDL_Quit();
-    cout << "game cleared" << endl;
+    cout << endl
+         << "game cleared" << endl;
 }

@@ -20,7 +20,7 @@ public:
     void reset();
     void setHighscore();
 
-    fstream filePtr;
+    fstream myFile;
 
     Snake *snake;
     Food *food;
@@ -28,8 +28,8 @@ public:
     SDL_Renderer *renderer = nullptr;
 
 private:
-    uint8_t allTimeHighscore = 0;
-    uint8_t highscore;
+    int allTimeHighscore = 0; // int omdat fstream van uint8 een char maakt. Of voor mensen met heel hoge highscores.
+    int highscore;            // geen uint8 door de zelfde reden als hierboven
     bool isRunning;
     SDL_Window *window = nullptr;
 };
