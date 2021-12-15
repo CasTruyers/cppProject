@@ -62,6 +62,7 @@ Quit the game be closing the window or pressing ESC.
 
 ### TO-DO
 
+- Top 3 highscores instead of 1
 - Add names to highscore.
 - sounds
 - memory optimization
