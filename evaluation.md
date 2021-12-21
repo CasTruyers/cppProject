@@ -1,3 +1,11 @@
+## evaluation
+
+Everything in **bold** is done.
+
+anything *cursive* is (i think) feasible to do in project.
+
+<hr>
+
 - **clean main (i.e. nothing in the main that shoud be in a class)**
 - **useful class (explain why)**
 - *useful and correct encapsulation (explain why)*
