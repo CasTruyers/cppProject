@@ -4,6 +4,12 @@ Everything in **bold** is done.
 
 anything *cursive* is (i think) feasible to do in project.
 
+mah goal -> 30 points
+
+40% of exam
+
+max 40 points
+
 <hr>
 
 - **clean main (i.e. nothing in the main that shoud be in a class)**
