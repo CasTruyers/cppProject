@@ -1,0 +1,79 @@
+## evaluation
+
+Everything in **bold** is done.
+
+anything *cursive* is (i think) feasible to do in project.
+
+mah goal -> 30 points
+
+40% of exam
+
+max 40 points
+
+<hr>
+
+- useful and correct encapsulation (explain why)
+- useful and correct inheritance (explain why)
+- useful and correct object composition (explain why)
+- useful and correct multiple inheritance (explain why)
+- correct base class
+- correct abstract base class
+- useful virtual function
+- useful proven (dynamic) polymorphism
+- *useful getters and setters for member variables*
+- *correct protections*
+- **no mistake in object-oriented programming**
+- **no globals, but statics if needed**
+- everything in one or more self-made namespace(s)
+- **maintanability by clean uniform code style and good function naming and/or comments everywhere**
+- **using the best suited type on a lot of places (almost everywhere possible)**
+
+- *at least 4 useful const references*
+- *correctly using const in almost all places (almost everywhere possible)*
+- *at least 4 useful bool*
+
+- *dynamic memory allocation (new)*
+- *dynamic memory removing (delete)*
+- **2 useful (modern) call-by-references**
+
+- useful string class usage
+- useful container class
+- useful operator overloading
+- useful function overloading (non operator)
+- useful function overriding (non virtual)
+- useful template function or class
+- useful non-type template arguments
+- useful friend function or class
+- correct useage of inline function
+- useful recursive function
+- *useful usage of nullptr*
+- *correct and useful usage of command line parameters* **(Want to print highscore?)**
+- useful usage of signals/slots
+- useful usage of lambda function
+- **one complete project that compiles and does not crash**
+- **working build manual as readme on GitHub (project must be possible to build from scratch on a clean PC)**
+- test-driven development (= written test plan or unit tests)
+- solved on 8 bug tickets
+- reported 8 bug tickets on other projects
+- usage of a GUI
+- **usage of OpenGL or other 3D engine**
+- **useful usage of an external library (not Qt)**
+- project that works with hardware
+- a nice extra that you think that should deserve grading (stuff you put time in and is not rewarded by an item above)
+
+## The ones i can truly confirm:
+
+- clean main (i.e. nothing in the main that shoud be in a class)
+- useful class (explain why)
+- useful pointer declaration and usage -> food::reset(Snake *snake)
+- at least 2 default constructors -> Food(), Snake() & Game()
+- *at least 2 specific constructors -> Food(), Snake() & Game()*
+- useful useage of "this" -> food::reset(Snake *snake)
+- *at least 2 destructors -> ~Food(), ~Snake() & ~Game()*
+- *member initialization in constructors (the stuff behind a colon) -> Food::Food()*
+- useful member variabel
+- useful member function
+- seperate header files
+- 2 useful unsigned chars or other better usage of memory efficient type
+- useful usage of (modern) file-I/O
+- default values in function definition
