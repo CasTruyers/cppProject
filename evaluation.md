@@ -1,7 +1,7 @@
 ## evaluation
 
 40% of exam
-current: 29/40
+current: 28/40
 
 <hr>
 
@@ -10,6 +10,7 @@ current: 29/40
 - *dynamic memory allocation (new)*
 - *dynamic memory removing (delete)*
 - *correct and useful usage of command line parameters* **(Want to print highscore?)**
+- a nice extra that you think that should deserve grading (stuff you put time in and is not rewarded by an item above) -> making .exe?
 
 ## Polymorphism
 - useful and correct inheritance -> no child class in this project
@@ -72,4 +73,3 @@ current: 29/40
 - useful and correct encapsulation (explain why)
 - useful getters and setters for member variables
 - useful and correct object composition (explain why) -> "Snake \*snake = nullptr" in Game class;
-- a nice extra that you think that should deserve grading (stuff you put time in and is not rewarded by an item above) -> making .exe?
