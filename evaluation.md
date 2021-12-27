@@ -12,14 +12,12 @@ max 40 points
 
 <hr>
 
-- *useful and correct inheritance (explain why)*
-- useful and correct object composition (explain why)
+- *useful and correct inheritance (explain why)* -> no child class in this project
 - useful and correct multiple inheritance (explain why)
 - correct base class
 - correct abstract base class
 - useful virtual function
 - useful proven (dynamic) polymorphism
-- *useful getters and setters for member variables*
 - *correct protections*
 - everything in one or more self-made namespace(s)
 
@@ -77,3 +75,5 @@ max 40 points
 - *no globals, but statics if needed*
 - useful usage of nullptr
 - useful and correct encapsulation (explain why)
+- useful getters and setters for member variables
+- useful and correct object composition (explain why) -> "Snake \*snake = nullptr" in Game class;
