@@ -22,19 +22,12 @@ max 40 points
 - useful proven (dynamic) polymorphism
 - *useful getters and setters for member variables*
 - *correct protections*
-- **no mistake in object-oriented programming**
-- **no globals, but statics if needed**
 - everything in one or more self-made namespace(s)
-- **maintanability by clean uniform code style and good function naming and/or comments everywhere**
-- **using the best suited type on a lot of places (almost everywhere possible)**
 
-- *at least 4 useful const references*
 - *correctly using const in almost all places (almost everywhere possible)*
-- *at least 4 useful bool*
 
 - *dynamic memory allocation (new)*
 - *dynamic memory removing (delete)*
-- **2 useful (modern) call-by-references**
 
 - useful string class usage
 - useful container class
@@ -50,16 +43,12 @@ max 40 points
 - *correct and useful usage of command line parameters* **(Want to print highscore?)**
 - useful usage of signals/slots
 - useful usage of lambda function
-- **one complete project that compiles and does not crash**
-- **working build manual as readme on GitHub (project must be possible to build from scratch on a clean PC)**
 - test-driven development (= written test plan or unit tests)
 - solved on 8 bug tickets
 - reported 8 bug tickets on other projects
 - usage of a GUI
-- **usage of OpenGL or other 3D engine**
-- **useful usage of an external library (not Qt)**
 - project that works with hardware
-- a nice extra that you think that should deserve grading (stuff you put time in and is not rewarded by an item above)
+- a nice extra that you think that should deserve grading (stuff you put time in and is not rewarded by an item above) -> making .exe?
 
 ## The ones i can truly confirm:
 
@@ -77,3 +66,14 @@ max 40 points
 - 2 useful unsigned chars or other better usage of memory efficient type
 - useful usage of (modern) file-I/O
 - default values in function definition
+- at least 4 useful bool -> isRunning, fullscreen, badColission(), foodColission()
+- 2 useful (modern) call-by-references -> printNewAlltimeHighscore(), printAllTimeHighscore()
+- usage of OpenGL or other 3D engine -> SDL
+- useful usage of an external library -> SDL
+- one complete project that compiles and does not crash
+- working build manual as readme on GitHub (project must be possible to build from scratch on a clean PC)
+- maintanability by clean uniform code style and good function naming and/or comments everywhere
+- no mistake in object-oriented programming
+- using the best suited type on a lot of places (almost everywhere possible)
+- at least 4 useful const references
+- *no globals, but statics if needed*
