@@ -20,7 +20,6 @@ max 40 points
 - correct abstract base class
 - useful virtual function
 - useful proven (dynamic) polymorphism
-- *default values in function definition*
 - *useful getters and setters for member variables*
 - *correct protections*
 - **no mistake in object-oriented programming**
@@ -77,3 +76,4 @@ max 40 points
 - seperate header files
 - 2 useful unsigned chars or other better usage of memory efficient type
 - useful usage of (modern) file-I/O
+- default values in function definition
