@@ -17,8 +17,8 @@ void Food::reset(Snake *snake)
     bool found = false;
     while (!found)
     {
-        this->position.x = rand() % RESOLUTION_X / CELL_SIZE;
-        this->position.y = rand() % RESOLUTION_Y / CELL_SIZE;
+        this->position.x = rand() % width / cellSize;
+        this->position.y = rand() % height / cellSize;
         found = true;
 
         //checkt of food zich niet op de zelfde pixel als de snake bevindt

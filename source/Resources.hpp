@@ -6,12 +6,11 @@
 #include "SDL2/SDL.h"
 #include <time.h>
 
-#define CELL_SIZE 8
-#define RESOLUTION_Y 240
-#define RESOLUTION_X 240
-
-const int FPS = 18;
-const int frameDelay = 1000 / FPS;
+static const uint8_t cellSize = 8;
+static const uint8_t height = 240;
+static const uint8_t width = 240;
+static const uint8_t FPS = 18;
+static const uint8_t frameDelay = 1000 / FPS;
 
 typedef struct xy
 {
@@ -20,8 +19,3 @@ typedef struct xy
 } xy;
 
 using namespace std;
-
-using std::cout;
-using std::endl;
-using std::fstream;
-using std::ios_base;

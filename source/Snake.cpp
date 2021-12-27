@@ -88,10 +88,10 @@ bool Snake::badCollision()
     if (position[0].y < 0)
         return true;
 
-    if (position[0].x >= RESOLUTION_X / CELL_SIZE)
+    if (position[0].x >= width / cellSize)
         return true;
 
-    if (position[0].y >= RESOLUTION_Y / CELL_SIZE)
+    if (position[0].y >= height / cellSize)
         return true;
 
     return false;

@@ -19,6 +19,8 @@ public:
     void setRectangle(int xpos, int ypos, int w, int h);
     void reset();
     void setHighscore();
+    void printAllTimeHighscore(int &value);
+    void printNewAllTimeHighscore(int &value);
 
     fstream myFile;
 

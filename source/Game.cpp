@@ -36,7 +36,7 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
     }
     else
         isRunning = false;
-    SDL_RenderSetLogicalSize(renderer, RESOLUTION_X / CELL_SIZE, RESOLUTION_Y / CELL_SIZE);
+    SDL_RenderSetLogicalSize(renderer, width / cellSize, height / cellSize);
 }
 
 void Game::handleEvents()
@@ -125,13 +125,8 @@ void Game::setHighscore()
     myFile.open("highscore.txt", ios::in);
     if (myFile.is_open())
     {
-        cout << endl
-             << endl;
         myFile >> allTimeHighscore;
-        cout << "******************************" << endl
-             << "*                            *" << endl;
-        cout << "*   all-time highscore: " << allTimeHighscore << "   *" << endl
-             << "*                            *" << endl;
+        printAllTimeHighscore(allTimeHighscore);
         myFile.close();
 
         if (allTimeHighscore < highscore || allTimeHighscore == 0)
@@ -139,9 +134,7 @@ void Game::setHighscore()
             myFile.open("highscore.txt", ios::out);
             if (myFile.is_open())
             {
-                cout << "*     breaked highscore!     *" << endl
-                     << "*                            *" << endl;
-                cout << "* new all-time highscore: " << highscore << " *" << endl;
+                printNewAllTimeHighscore(highscore);
                 myFile << highscore;
                 myFile.close();
             }
@@ -165,4 +158,21 @@ void Game::clean()
     SDL_Quit();
     cout << endl
          << "game cleared" << endl;
+}
+
+void Game::printAllTimeHighscore(int &value)
+{
+    cout << endl
+         << endl
+         << "******************************" << endl
+         << "*                            *" << endl
+         << "*   all-time highscore: " << value << "   *" << endl
+         << "*                            *" << endl;
+}
+
+void Game::printNewAllTimeHighscore(int &value)
+{
+    cout << "*     breaked highscore!     *" << endl
+         << "*                            *" << endl
+         << "* new all-time highscore: " << value << " *" << endl;
 }

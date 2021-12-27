@@ -10,7 +10,7 @@ int main()
 
     Game *game = new Game();
 
-    game->init("snake", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, RESOLUTION_X, RESOLUTION_Y);
+    game->init("snake", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height);
 
     while (game->running())
     {
