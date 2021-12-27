@@ -125,3 +125,13 @@ void Snake::render(SDL_Renderer *renderer)
     SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
     SDL_RenderDrawRect(renderer, &this->position[0]);
 }
+
+uint8_t Snake::getLength()
+{
+    return length;
+}
+
+void Snake::setLength(uint8_t value)
+{
+    length = value;
+}

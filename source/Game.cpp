@@ -6,8 +6,8 @@ Game::Game()
     food = new Food();
     food->reset(snake);
 
-    snake->length = 5;
-    highscore = snake->length;
+    snake->setLength(5);
+    highscore = snake->getLength();
 }
 
 Game::~Game()
@@ -112,9 +112,9 @@ void Game::render()
 
 void Game::reset()
 {
-    if (snake->length > highscore)
-        highscore = snake->length;
-    cout << "score: " << +snake->length << endl
+    if (snake->getLength() > highscore)
+        highscore = snake->getLength();
+    cout << "score: " << +snake->getLength() << endl
          << "highScore: " << highscore << endl;
     snake->reset();
     food->reset(snake);
