@@ -65,5 +65,4 @@ Quit the game be closing the window or pressing ESC.
 - Top 3 highscores instead of 1
 - Add names to highscore.
 - sounds
-- memory optimization
 - score/highscore displayed on window
