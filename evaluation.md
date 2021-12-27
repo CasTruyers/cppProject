@@ -12,8 +12,7 @@ max 40 points
 
 <hr>
 
-- useful and correct encapsulation (explain why)
-- useful and correct inheritance (explain why)
+- *useful and correct inheritance (explain why)*
 - useful and correct object composition (explain why)
 - useful and correct multiple inheritance (explain why)
 - correct base class
@@ -39,7 +38,6 @@ max 40 points
 - useful friend function or class
 - correct useage of inline function
 - useful recursive function
-- *useful usage of nullptr*
 - *correct and useful usage of command line parameters* **(Want to print highscore?)**
 - useful usage of signals/slots
 - useful usage of lambda function
@@ -77,3 +75,5 @@ max 40 points
 - using the best suited type on a lot of places (almost everywhere possible)
 - at least 4 useful const references
 - *no globals, but statics if needed*
+- useful usage of nullptr
+- useful and correct encapsulation (explain why)
