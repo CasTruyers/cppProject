@@ -14,14 +14,14 @@ current: 28/40
 - a nice extra that you think that should deserve grading (stuff you put time in and is not rewarded by an item above) -> making .exe?
 
 ## Polymorphism
-- useful and correct inheritance -> no child class in this project
 - useful and correct multiple inheritance -> no child class in this project
 - correct base class -> no child class in this project
 - correct abstract base class -> no child class in this project
 - useful virtual function -> no child class in this project
 - useful proven (dynamic) polymorphism -> no child class in this project
 - correct protections -> no child class in this project
-
+- useful and correct object composition (explain why)
+- 
 ## Too much work
 - everything in one or more self-made namespace(s)
 - correctly using const in almost all places (almost everywhere possible)
@@ -71,6 +71,7 @@ current: 28/40
 - at least 4 useful const references
 - *no globals, but statics if needed*
 - useful usage of nullptr
-- useful and correct encapsulation (explain why)
+- useful and correct encapsulation (explain why) -> protection
 - useful getters and setters for member variables
-- useful and correct object composition (explain why) -> "Snake \*snake = nullptr" in Game class;
+- useful pointer declaration and usage-> "Snake \*snake = nullptr" in Game class 
+- useful and correct inheritance -> Food claas is inherented from Snake class
