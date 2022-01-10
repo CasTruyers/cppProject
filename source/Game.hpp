@@ -17,9 +17,9 @@ public:
     bool running() { return isRunning; }
     void setRectangle(int xpos, int ypos, int w, int h);
     void reset();
-    void setHighscore();
-    void printAllTimeHighscore(int &value);
-    void printNewAllTimeHighscore(int &value);
+    void setHighscore(char *name);
+    void printAllTimeHighscore(int &value, string leader);
+    void printNewAllTimeHighscore(int &value, char *name);
 
 private:
     int allTimeHighscore = 0; // int omdat fstream van uint8 een char maakt. Of voor mensen met heel hoge highscores.

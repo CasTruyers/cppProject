@@ -3,7 +3,7 @@
 #include "Food.hpp"
 #include "Resources.hpp"
 
-int main()
+int main(int argc, char **argv)
 {
     int frameStart;
     int frameTime;
@@ -26,9 +26,10 @@ int main()
             SDL_Delay(frameDelay - frameTime);
     }
 
-    game->setHighscore();
-
     game->clean();
+
+    if (!strcmp(argv[1], "tournament") && argc == 3)
+        game->setHighscore(argv[2]);
 
     return EXIT_SUCCESS;
 }

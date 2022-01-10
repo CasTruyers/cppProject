@@ -120,22 +120,33 @@ void Game::reset()
     food->reset(snake);
 }
 
-void Game::setHighscore()
+void Game::setHighscore(char *name)
 {
+    int i;
+    string input;
     myFile.open("highscore.txt", ios::in);
     if (myFile.is_open())
     {
-        myFile >> allTimeHighscore;
-        printAllTimeHighscore(allTimeHighscore);
+        getline(myFile, input);
         myFile.close();
+        for (i = 0; i <= input.size(); i++)
+        {
+            if (input[i] == ':')
+                break;
+        }
+        string score = input.substr(i + 1, 3);
+        string leader = input.substr(0, i);
+        stringstream number(score);
+        number >> allTimeHighscore;
 
+        printAllTimeHighscore(allTimeHighscore, leader);
         if (allTimeHighscore < highscore || allTimeHighscore == 0)
         {
+            printNewAllTimeHighscore(highscore, name);
             myFile.open("highscore.txt", ios::out);
             if (myFile.is_open())
             {
-                printNewAllTimeHighscore(highscore);
-                myFile << highscore;
+                myFile << name << ":" << highscore;
                 myFile.close();
             }
             else
@@ -143,13 +154,13 @@ void Game::setHighscore()
         }
         else
             cout << "* did not break highscore :( *" << endl;
+        cout << "*                            *" << endl
+             << "******************************" << endl;
     }
     else
     {
         cout << "Error opening file input" << endl;
     }
-    cout << "*                            *" << endl
-         << "******************************" << endl;
 }
 void Game::clean()
 {
@@ -160,19 +171,21 @@ void Game::clean()
          << "game cleared" << endl;
 }
 
-void Game::printAllTimeHighscore(int &value)
+void Game::printAllTimeHighscore(int &value, string leader)
 {
     cout << endl
          << endl
          << "******************************" << endl
          << "*                            *" << endl
          << "*   all-time highscore: " << value << "   *" << endl
+         << "* held by: " << leader << endl
          << "*                            *" << endl;
 }
 
-void Game::printNewAllTimeHighscore(int &value)
+void Game::printNewAllTimeHighscore(int &value, char *name)
 {
     cout << "*     breaked highscore!     *" << endl
          << "*                            *" << endl
-         << "* new all-time highscore: " << value << " *" << endl;
+         << "* new all-time highscore: " << value << " *" << endl
+         << "* On name: " << name << endl;
 }

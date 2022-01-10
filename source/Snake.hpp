@@ -17,10 +17,9 @@ public:
     void grow();
     void render(SDL_Renderer *renderer);
     void reset();
-    uint8_t getLength();
     void setLength(uint8_t value);
-
     SDL_Rect position[60];
+    uint8_t getLength();
 
 private:
     uint8_t length;

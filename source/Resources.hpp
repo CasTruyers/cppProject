@@ -5,6 +5,7 @@
 #include <fstream>
 #include "SDL2/SDL.h"
 #include <time.h>
+#include <sstream>
 
 static const uint8_t cellSize = 8;
 static const uint8_t height = 240;

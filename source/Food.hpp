@@ -2,7 +2,7 @@
 #include "Resources.hpp"
 #include "Snake.hpp"
 
-class Food
+class Food : Snake
 {
 public:
     Food();

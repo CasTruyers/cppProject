@@ -22,7 +22,7 @@ void Food::reset(Snake *snake)
         found = true;
 
         //checkt of food zich niet op de zelfde pixel als de snake bevindt
-        for (int i = 0; i < snake->getLength(); i++)
+        for (int i = 0; i < getLength(); i++) //inheretance: getLength() is van snake class
         {
             if (snake->position[i].x == this->position.x && snake->position[i].y == this->position.y)
                 found = false;
