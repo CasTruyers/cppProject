@@ -1,33 +1,30 @@
 ## evaluation
 
-Everything in **bold** is done.
-
-anything *cursive* is (i think) feasible to do in project.
-
-mah goal -> 30 points
-
 40% of exam
 
-max 40 points
+current: 28/40
 
 <hr>
 
-- *useful and correct inheritance (explain why)*
-- useful and correct object composition (explain why)
-- useful and correct multiple inheritance (explain why)
-- correct base class
-- correct abstract base class
-- useful virtual function
-- useful proven (dynamic) polymorphism
-- *useful getters and setters for member variables*
-- *correct protections*
-- everything in one or more self-made namespace(s)
-
-- *correctly using const in almost all places (almost everywhere possible)*
+## To-Do
 
 - *dynamic memory allocation (new)*
 - *dynamic memory removing (delete)*
+- *correct and useful usage of command line parameters* **(Want to print highscore?)**
+- a nice extra that you think that should deserve grading (stuff you put time in and is not rewarded by an item above) -> making .exe?
 
+## Polymorphism
+- useful and correct multiple inheritance -> no child class in this project
+- correct base class -> no child class in this project
+- correct abstract base class -> no child class in this project
+- useful virtual function -> no child class in this project
+- useful proven (dynamic) polymorphism -> no child class in this project
+- correct protections -> no child class in this project
+- useful and correct object composition (explain why)
+- 
+## Too much work
+- everything in one or more self-made namespace(s)
+- correctly using const in almost all places (almost everywhere possible)
 - useful string class usage
 - useful container class
 - useful operator overloading
@@ -38,7 +35,6 @@ max 40 points
 - useful friend function or class
 - correct useage of inline function
 - useful recursive function
-- *correct and useful usage of command line parameters* **(Want to print highscore?)**
 - useful usage of signals/slots
 - useful usage of lambda function
 - test-driven development (= written test plan or unit tests)
@@ -46,7 +42,6 @@ max 40 points
 - reported 8 bug tickets on other projects
 - usage of a GUI
 - project that works with hardware
-- a nice extra that you think that should deserve grading (stuff you put time in and is not rewarded by an item above) -> making .exe?
 
 ## The ones i can truly confirm:
 
@@ -76,4 +71,7 @@ max 40 points
 - at least 4 useful const references
 - *no globals, but statics if needed*
 - useful usage of nullptr
-- useful and correct encapsulation (explain why)
+- useful and correct encapsulation (explain why) -> protection
+- useful getters and setters for member variables
+- useful pointer declaration and usage-> "Snake \*snake = nullptr" in Game class 
+- useful and correct inheritance -> Food claas is inherented from Snake class
