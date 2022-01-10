@@ -159,7 +159,8 @@ void Game::setHighscore(char *name)
     }
     else
     {
-        cout << "Error opening file input" << endl;
+        cout << "Error opening file input" << endl
+             << "Place 'highscore.txt' (from github) in snake folder" << endl;
     }
 }
 void Game::clean()
